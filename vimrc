@@ -2,8 +2,6 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-autocmd vimenter * if !argc() | NERDTree | endif
-
 noremap h u
 noremap j n
 noremap k o
