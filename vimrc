@@ -10,12 +10,21 @@ noremap n h
 noremap u k
 noremap e j
 noremap o l
-noremap : '
-noremap ' :
+noremap : t
+noremap ; T
+noremap t :
+noremap T ;
+noremap w b
+noremap W B
+noremap b w
+noremap B W
 
 set t_Co=256
+set background=dark
 
 colorscheme wombat256mod
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
 set number
 set expandtab
 set tabstop=4
@@ -38,3 +47,17 @@ let g:airline_powerline_fonts = 1
 cmap w!! w !sudo tee >/dev/null %
 set noshelltemp
 set shell=/bin/bash
+autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
+autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
+set scrolloff=10
+set mouse=a
+set ttymouse=xterm2
+let g:ctrlp_show_hidden=1
+set splitright
+set splitbelow
+ca t CtrlP
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
+set laststatus=2
