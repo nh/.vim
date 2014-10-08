@@ -42,7 +42,7 @@ set encoding=utf-8
 set guifont=Consolas\ 10
 
 set linespace=1
-set dir=~/tmp
+set directory=~/.vim/tmp
 
 nmap <F8> :TagbarToggle<CR>
 let g:airline_powerline_fonts = 1
