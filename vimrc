@@ -1,7 +1,11 @@
-execute pathogen#infect()
+" execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+nnoremap <silent> <C-e> :wincmd k<CR>
+nnoremap <silent> <C-u> :wincmd h<CR>
+nnoremap <silent> <C-n> :wincmd h<CR>
+nnoremap <silent> <C-o> :wincmd l<CR>
 noremap h u
 noremap j n
 noremap k o
@@ -56,8 +60,10 @@ let g:ctrlp_show_hidden=1
 set splitright
 set splitbelow
 ca t CtrlP
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+if has("python")
+    python from powerline.vim import setup as powerline_setup
+    python powerline_setup()
+    python del powerline_setup
+endif
 set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
 set laststatus=2
